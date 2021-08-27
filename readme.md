@@ -45,7 +45,7 @@ has three attributes:
 The repository is a InteliJ project that uses Maven to manage the dependencies and build process, this means that you have two options to run it:
 
 1. Clone the repo and open it as a InteliJ project and run it from the IDE selecting `app.Application` as main class (recommended in case you want to debug and see how it works in detail)
-2. Download the file `/target/MarsRobots-0.1.jar` and run it typing `java -jar MarsRobots-0.1.jar` on the directory where you have downloaded the .jar file (fastest and recommended if you only want to test it)
+2. Clone the repo and package the proyect with `mvn clean install`, after that, execute the resulting .jar with `java -jar ./target/MartianRobots-0.1.jar`
 
 After executing the program with any of the two previous options, open a web browser and type `http://localhost:8080/`
 to see a simple webpage that will allow you to test the `http://localhost:8080/solve` endpoint, which receives the input of
