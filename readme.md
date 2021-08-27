@@ -52,7 +52,7 @@ to see a simple webpage that will allow you to test the `http://localhost:8080/s
 the problem encapsulated on a JSON object like this:
 ```json
 {
-	text: "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n"
+	"text": "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n"
 }
 ```
 And returns another JSON object like this:
@@ -62,12 +62,12 @@ And returns another JSON object like this:
     "stats": {
         "robotStatsList": [
             {
-                "pathFollowed": [...],
+                "pathFollowed": [ ],
                 "wasLost": false,
                 "leavedScent": false
             },
             {
-                "pathFollowed": [...],
+                "pathFollowed": [ ],
                 "wasLost": true,
                 "leavedScent": true
             }
