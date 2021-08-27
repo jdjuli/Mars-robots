@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Martian robots</h1>
+        <p>A team of scientists has decided to explore Mars, a very strange planet, to do so, they proposed you to
+        develop a tool that provided the dimensions of the exploration grid and the position and instructions assigned to
+        every rover, simulates the result of the expedition and also returns some statistics about it</p>
+        <h3>Why is Mars an strange planet?</h3>
+        <p>The scientists say that according to their investigations, the planet is flat and hence, if a rover crosses
+        it's border, it's lost forever. Taking this into account, they equipped the rovers with a sophisticated system of
+        'warning markers' called scent, that the rovers put on the border on Mars just before falling off and when another
+        rover of the same mission senses it, it pays more attention to the instructions given and discard those which would
+        make it fall.</p>
+        <h3>How is the input encoded?</h3>
+        <p>The first row is the furthest explorable position of Mars in X Y coordinates, assuming that the opposite corner
+        of the area is (0,0)</p>
+        <p>The next lines codify the initial position and instructions given to each rover in order. The initial position
+        is also a coordinate X Y followed by the cardinal point the rover is facing initially (N/E/S/W). The second line
+        are the instructions, all in uppercase and without whitespaces in between (minimum 1 and maximum 50)</p>
+        <p>They provided a list with the instructions that should be simulated:</p>
+        <ul>
+            <li>F - "Forward": moves forward one position in the direction the rover is looking.
+                Moving towards north means increase the Y coordinate in one unit</li>
+            <li>R - "Right": rotates the rover 90deg to the right without changing it's position</li>
+            <li>L - "Left": rotates the rover 90deg to the left without changing it's position</li>
+        </ul>
+        <h3>Simulator</h3>
+        <hr>
+    </div>
+    <div class="container col-11">
+        <div class="card-group">
+            <div class="card">
+                <h4 class="card-title text-center">Input</h4>
+                <textarea id="inputText" class="card-text" rows="10" cols="50">
+5 3
+1 1 E
+RFRFRFRF
+3 2 N
+FRRFLLFFRRFLL
+0 3 W
+LLFFFLFLFL
+                </textarea>
+                <div class="card-footer">
+                    <button class="btn btn-secondary" onclick="clearOutput()">Clear output</button>
+                    <button class="btn btn-primary" onclick="queryService()">Send</button>
+                </div>
+            </div>
+            <div class="card">
+                <h4 class="card-title text-center">Output</h4>
+                <pre class="card-text" id="outputText"></pre>
+            </div>
+            <div class="card">
+                <h4 class="card-title text-center">Stats</h4>
+                <ul>
+                    <li>Area covered: <span id="stat_areaCovered" class="font-weight-bold"></span></li>
+                    <li>Robots lost: <span id="stat_robotsLost" class="font-weight-bold"></span></li>
+                    <li>Scents leaved: <span id="stat_scentsLeaved" class="font-weight-bold"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div th:if="${output}">
+    <pre th:text="${output}"></pre>
+  </div>
+  <div th:unless="${output}">
+    <p>Error parsing the data provided, check it and try again</p>
+  </div>
+
+</body>
+</html>
